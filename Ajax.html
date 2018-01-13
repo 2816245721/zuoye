@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button"id="btn"value="按钮">
+	<ul id="ul1"></ul>
+</body>
+</html>
+<script>
+   var btn=document.getElementById("btn")
+        btn.onclick=function(){
+            var xhr=new XMLHttpRequest()
+            xhr.open("GET","Ajax.php",true)
+            xhr.send()
+            xhr.onreadystatechange=function(){
+                if(xhr.readyState==4){
+                    if(xhr.status==200){
+                        var data=JSON.parse(xhr.responseText);
+                        var oul=document.getElementById("ul1");
+                        var html=""
+                        for(var i=0;i<data.length;i++){
+                            html+='<li><a href="">'+data[i].title+"</a><span>"+data[i].date+'</span></li>'
+                        }
+                        oul.innerHTML=html
+                    }else{
+                        alert("报错"+xhr.status)
+                    }
+                }
+            }
+        }
+</script>

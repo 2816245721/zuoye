@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet"type="text/css"href="lib/bootstrap.min.css">
+	<script src="lib/jquery-1.7.2.js"></script>
+	<script src="lib/bootstrap.js"></script>
+	<script src="js/vue2.min.js"></script>
+	<style>
+		ul{
+			width: 200px;
+		}
+	</style>
+</head>
+<body>
+	 <div id="box">
+	    <ol class="breadcrumb">
+			<li><a href="#">首页</a></li>
+	    	
+	    </ol>
+	 	<ul class="nav nav-pills nav-stacked">
+			<li class="active"><a href="#">首页</a></li>
+			<li><a href="#">菜单1</a></li>
+			<li><a href="#">菜单2</a></li>
+			<li><a href="#">菜单3</a></li>
+			<li><a href="#">菜单4</a></li>
+            <li><a href="#">菜单5</a></li>
+	    </ul>
+	 </div>
+</body>
+</html>
+<script>
+   var vm=new Vue({
+	   el:'#box',
+	   data:{
+		   msg:['首页',
+				'菜单1',
+				'菜单2',
+				'菜单3',
+				'菜单4',
+				'菜单5']
+	   }
+   })
+</script>
